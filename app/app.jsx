@@ -6,6 +6,8 @@ var TodoApp = require('TodoApp');
 
 // Load foundation
 $(document).foundation();
+// App css
+require('style!css!sass!applicationStyles')
 
 ReactDOM.render( // --> most common react dom method
   <TodoApp/>,
