@@ -1,19 +1,13 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
-var obj1 = {
-  name: 'Manuel',
-  location: 'Gijon'
-};
+var TodoApp = require('TodoApp');
 
-var obj2 = {
-  age:33,
-  ...obj1
-};
-
-console.log(obj2);
+// Load foundation
+$(document).foundation();
 
 ReactDOM.render( // --> most common react dom method
-  <h1> REACT clean app!</h1>,
+  <TodoApp/>,
   document.getElementById('app')
 );
