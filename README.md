@@ -19,3 +19,4 @@ It's going to be composed by different components:
 - We have added node-uuid dependency => npm install node-uuid --save-dev
 - Saving data in localStorage ( Not using DB )
 - Created an static api  which handles todos functions for getting , filtering and adding new todos
+- Adding moment.js for dates in our todo-list application
