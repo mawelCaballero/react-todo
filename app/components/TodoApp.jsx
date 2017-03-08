@@ -24,6 +24,7 @@ handleToggle:function(id){
   var updatedTodos = this.state.todos.map((todo) => {
     if (todo.id === id){
       todo.completed = !todo.completed;
+      todo.completedAt = todo.completed ? moment().unix(): undefined;
     }
     return todo;
   });
@@ -57,13 +58,22 @@ handleAddTodo: function (text) {
 },
 
 render: function () {
-  var {todos, showCompleted, searchText} = this.state;
+  var {todos, showCompleted, searchText, completedAt} = this.state;
   var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
   return (
     <div>
-      <TodoSearch onSearch={this.handleSearch}/>
-      <TodoList todos={filteredTodos} onToggle={this.handleToggle}/>
-      <AddTodo onAddTodo={this.handleAddTodo}/>
+        <h1 className="page-title">TodoApp</h1>
+        <div className="row">
+          <div className="column small-centered small-11 medium-6 large-5">
+            <div className="container">
+              <TodoSearch onSearch={this.handleSearch}/>
+              <TodoList todos={filteredTodos} onToggle={this.handleToggle}/>
+              <AddTodo onAddTodo={this.handleAddTodo}/>
+            </div>
+
+          </div>
+        </div>
+
     </div>
   )
 }
